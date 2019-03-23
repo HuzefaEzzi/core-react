@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
 
 export class Counter extends Component {
   displayName = Counter.name
@@ -17,6 +17,8 @@ export class Counter extends Component {
   }
 
   render() {
+    const text = "Value is " + this.state.currentCount;
+
     return (
       <div>
         <h1>Counter</h1>
@@ -25,7 +27,7 @@ export class Counter extends Component {
 
         <p>Current count: <strong>{this.state.currentCount}</strong></p>
 
-        <Button color="primary" onClick={this.incrementCounter}>Increment</Button>
+        <Chip label={text} onClick={this.incrementCounter} />
       </div>
     );
   }
