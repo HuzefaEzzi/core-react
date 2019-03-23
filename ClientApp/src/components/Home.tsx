@@ -1,13 +1,37 @@
 import React, { Component } from 'react';
+import Auth from '../auth/Auth';
 
-export class Home extends Component {
+export class Home extends Component<{auth:Auth}> {
   displayName = Home.name
-
+  login() {
+    this.props.auth.login();
+  }
   render() {
+    const { isAuthenticated } = this.props.auth;
+
     return (
-      <div>
-        <h1>Hello, From Home!</h1>
-        
+      <div className="container">
+        {
+          isAuthenticated() && (
+              <h4>
+                You are logged in!
+              </h4>
+            )
+        }
+        {
+          !isAuthenticated() && (
+              <h4>
+                You are not logged in! Please{' '}
+                <a
+                  style={{ cursor: 'pointer' }}
+                  onClick={this.login.bind(this)}
+                >
+                  Log In
+                </a>
+                {' '}to continue.
+              </h4>
+            )
+        }
       </div>
     );
   }

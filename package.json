@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/auth0-js": "^8.11.11",
+    "auth0-js": "^9.10.1"
+  }
+}
