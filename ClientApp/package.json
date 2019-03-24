@@ -16,7 +16,9 @@
     "react-dom": "latest",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "@types/auth0-js": "^8.11.11",
+    "auth0-js": "^9.10.1"
   },
   "devDependencies": {
     "@types/jest": "*",
