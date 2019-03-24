@@ -33,7 +33,15 @@ export const mainListItems = (
         <ListItemIcon>
             <ShoppingCartIcon />
         </ListItemIcon>
-        <ListItemText primary="FetchData" />
+        <ListItemText primary="Fetch Data" />
+        </ListItem>
+    </Link>
+    <Link to="/secretfetchdata" style={{ textDecoration: 'none' }}>
+        <ListItem button>
+        <ListItemIcon>
+            <ShoppingCartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Secret Fetch Data" />
         </ListItem>
     </Link>
   </div>

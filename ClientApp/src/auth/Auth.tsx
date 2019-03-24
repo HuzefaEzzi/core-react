@@ -11,8 +11,9 @@ export default class Auth {
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
-    responseType: 'token id_token',
-    scope: 'openid'
+    audience: AUTH_CONFIG.audiance,
+    responseType: "token id_token",
+    scope: "openid profile email"
   });
 
   constructor(history : any) {

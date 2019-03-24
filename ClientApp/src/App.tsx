@@ -10,6 +10,7 @@ import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import withRoot from './withRoot';
 import Auth from './auth/Auth';
 import Callback from './components/Callback';
+import SecretFetchData from './components/SecretFetchData';
 
 const styles = (theme:Theme) => createStyles({ });//todo remove
 
@@ -33,6 +34,15 @@ class App extends Component<{history:History}>  {
         <Route path="/callback" render={(props) => {
           return <Callback auth = {this.auth} {...props} /> 
         }}/>
+
+        <Route path="/secretfetchdata" render={(props) => {
+          if  (this.auth.isAuthenticated())
+            return <SecretFetchData auth = {this.auth} {...props} /> 
+          else
+            this.auth.login()
+        }}/>
+
+       
       </Layout>
     );
   }
